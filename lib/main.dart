@@ -3,7 +3,7 @@
 // Grado y Grupo: 10°A
 // Docente: Ramírez Hernández Marco Antonio
 import 'package:flutter/material.dart';
-import 'package:dmi_practica09_200070/home.dart';
+import 'package:dmi_practica11_200070/home.dart';
 
 void main() {
   runApp(MaterialApp(

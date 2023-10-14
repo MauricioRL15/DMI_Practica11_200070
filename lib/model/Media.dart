@@ -1,5 +1,5 @@
-import 'package:dmi_practica09_200070/common/Util.dart';
-import 'package:dmi_practica09_200070/common/MediaProvider.dart';
+import 'package:dmi_practica11_200070/common/Util.dart';
+import 'package:dmi_practica11_200070/common/MediaProvider.dart';
 
 class Media {
   int id;

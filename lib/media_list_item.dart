@@ -17,7 +17,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:dmi_practica09_200070/model/Media.dart';
+import 'package:dmi_practica11_200070/model/Media.dart';
 
 class MediaListItem extends StatelessWidget {
   final Media media;
@@ -57,7 +57,7 @@ class MediaListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      width: 380.0,
+                      width: 280.0,
                       child: Text(
                         media.title,
                         style: TextStyle(

@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:dmi_practica09_200070/model/Media.dart';
-import 'package:dmi_practica09_200070/common/HttpHandler.dart';
+import 'package:dmi_practica11_200070/model/Media.dart';
+import 'package:dmi_practica11_200070/common/HttpHandler.dart';
 
 abstract class MediaProvider{
   Future<List<Media>> fetchMedia();

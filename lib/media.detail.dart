@@ -1,4 +1,4 @@
-import 'package:dmi_practica09_200070/model/Media.dart';
+import 'package:dmi_practica11_200070/model/Media.dart';
 import 'package:flutter/material.dart';
 
 class MediaDetail extends StatelessWidget {

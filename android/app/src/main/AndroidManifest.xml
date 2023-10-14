@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />  
     <application
-        android:label="dmi_practica09_200070"
+        android:label="dmi_practica11_200070"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
