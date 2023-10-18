@@ -131,7 +131,7 @@ class _HomeState extends State<Home> {
     return (mediaType == MediaType.movie) ?
     <Widget>[
       MediaList(movieProvider, "popular"),
-      MediaList(movieProvider, "upcoming"),
+      MediaList(movieProvider, "upcoming"),  // Mostrar películas por estrenarse
       MediaList(movieProvider, "top_rated"),
     ]:<Widget>[
       MediaList(showProvider, "popular"),
