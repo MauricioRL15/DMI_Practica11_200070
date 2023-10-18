@@ -13,8 +13,22 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  @override
+  void initState(){
+    _pageController = PageController();
+    super.initState();
+  }
+  @override
+  void dispose(){
+    _pageController?.dispose();
+    super.dispose();
+  }
+
   final MediaProvider movieProvider = MovieProvider();
   final MediaProvider showProvider = ShowProvider();
+  PageController? _pageController;
+
+  int _page = 0;
 
   MediaType mediaType = MediaType.movie;
 
@@ -70,20 +84,36 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: PageView(
-        children: _getMediaList()
+        children: _getMediaList(),
+        controller: _pageController,
+        onPageChanged: (int index){
+          setState(() {
+            _page = index;
+          });
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: _obtenerIconos(),
+        onTap: _navigationTapped,
+        currentIndex: _page,
       ),
     );
   }
 
   List<BottomNavigationBarItem> _obtenerIconos() {
-    return [
+    return mediaType == MediaType.movie ? [
       BottomNavigationBarItem(
           icon: Icon(Icons.thumb_up_alt_rounded), label: "Populares"),
       BottomNavigationBarItem(
-          icon: Icon(Icons.update_rounded), label: "Próximamente"),
+          icon: Icon(Icons.update_rounded), label: "Proximamente"),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.star_rounded), label: "Mejor Valoradas"),
+    ]:
+    [
+      BottomNavigationBarItem(
+          icon: Icon(Icons.thumb_up_alt_rounded), label: "Populares"),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.update_rounded), label: "Al aire"),
       BottomNavigationBarItem(
           icon: Icon(Icons.star_rounded), label: "Mejor Valoradas"),
     ];
@@ -100,10 +130,19 @@ class _HomeState extends State<Home> {
   List<Widget> _getMediaList(){
     return (mediaType == MediaType.movie) ?
     <Widget>[
-      MediaList(movieProvider)
+      MediaList(movieProvider, "popular"),
+      MediaList(movieProvider, "upcoming"),
+      MediaList(movieProvider, "top_rated"),
     ]:<Widget>[
-      MediaList(showProvider)
+      MediaList(showProvider, "popular"),
+      MediaList(showProvider, "on_the_air"),
+      MediaList(showProvider, "top_rated"),
     ];
+  }
+
+  void _navigationTapped(int page){
+    _pageController?.animateToPage(page, duration: const Duration(seconds: 1), curve: Curves.ease);
+    
   }
 
 }

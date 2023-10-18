@@ -1,26 +1,9 @@
-// class Media extends StatelessWidget {
-//   final Media media;
-//   MediaListItem(this.media);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return new Card(
-//       child: new Column(
-//         children: <Widget>[
-//           new FadeInImage.assetNetwork(
-//             placeholder: "assets/img1.png",
-//             image: media.getPosterUrl(),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 import 'package:dmi_practica11_200070/model/Media.dart';
 
 class MediaListItem extends StatelessWidget {
   final Media media;
+  
   MediaListItem(this.media);
 
   @override
